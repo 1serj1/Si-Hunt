@@ -1,0 +1,49 @@
+     
+@media only screen and (min-width: 320px)and (max-width: 450px){   
+ body {
+ background-color: black;
+ }
+ div#board { 
+  position: relative;  /*все позиционируется по этому элементу */
+ width: 1024px;
+ height: 863px;
+ margin: auto;
+ background: url("si9.jpg") no-repeat;
+ }
+ 
+div#messageArea {     
+ position: absolute;   /*позиционируется по элементу #board так как вложен в него по структуре HTML*/
+ top: 0px;
+ left: 0px;
+ color: rgb(83, 175, 19);
+}
+
+table {
+ position: absolute;   /*позиционируется по элементу #board так как вложен в него по структуре HTML*/
+ left: 173px;
+ top: 98px;
+ border-spacing: 0px;
+}
+td {
+ width: 94px;      /* четкие размеры ячеек таблицы */
+ height: 94px;
+}
+form {
+ position: absolute;  /*позиционируется по элементу #board так как вложен в него по структуре HTML*/
+ bottom: 0px;   /* submit если связано с сервером? */
+ right: 0px;
+ padding: 15px;
+ background-color: rgb(83, 175, 19);    /* задается цвет */
+}
+form input {    /* стилизация форм */
+ background-color: rgb(152, 207, 113);
+ border-color: rgb(83, 175, 19);
+ font-size: 1em;
+}
+.hit {
+ background: url("ship.png") no-repeat center center;  /* задается картинка как фон цветом картинки по всей ячейке, по центру */
+}
+.miss {
+ background: url("miss.png") no-repeat center center; /* задается картинка как фон цветом картинки по всей ячейке, по центру */
+}
+}
