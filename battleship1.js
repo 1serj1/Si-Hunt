@@ -11,30 +11,11 @@ var model = {      //объект модели
 		{ locations: [0, 0, 0], hits: ["", "", ""] }
 	],
 
-// original hard-coded values for ship locations
-/*
-	ships: [
-		{ locations: ["06", "16", "26"], hits: ["", "", ""] },
-		{ locations: ["24", "34", "44"], hits: ["", "", ""] },
-		{ locations: ["10", "11", "12"], hits: ["", "", ""] }
-	],
-*/
 
 	fire: function(guess) {   //pадаются координаты корабля 
 		for (var i = 0; i < this.numShips; i++) {   //перебираются координаты всех клеток всех кораблей
 			var ship = this.ships[i];  //проверка попадания в массив ships
-			var index = ship.locations.indexOf(guess);  /*.indexOf ищет в массиве значение и возвращает его индекс (работает и в строке и в массиве)
-            ИЛИ КОРОЧЕ  var index = ship.locations.indexOf(guess);*/
-            /*var ship =  { locations: ["06", "16", "26"], hits: ["", "", ""] };  - объект ship -->
-              var locations = ship.locations;  Извлекаем массив locations из объекта ship. -->
-               var index = locations.indexOf(guess);  используем его для вызова метода indexOf.
-получаем:
-var index = ship.locations.indexOf(guess);
- - ship
- - locations
- - indexOf(guess) */
-			// here's an improvement! Check to see if the ship
-			// has already been hit, message the user, and return true.
+			var index = ship.locations.indexOf(guess);  
 			if (ship.hits[index] === "hit") {
 				view.displayMessage("Oops, you already hit that location!");
 				return true;
