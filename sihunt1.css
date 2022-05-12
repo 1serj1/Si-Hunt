@@ -1,0 +1,7 @@
+div#board { 
+    position: relative;  /*все позиционируется по этому элементу */
+   width: 320px ;
+   height: 320px ;
+   margin: auto;
+   background: url("si9.jpg") no-repeat;
+   }
