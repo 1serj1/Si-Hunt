@@ -5,15 +5,20 @@ var model = {      //объект модели
 	shipsSunk: 0,     //Свойство shipsSunk 0 - НАЧАЛО ИГРЫ
 	
 	ships: [
-		{ locations: [0, 0, 0], hits: ["", "", ""] }, /*Свойство ships содержит массив объектов ship,содержащих массивы locations и hits 
-        для одного из трех кораблей.(Обратите внимание, что использовавшаяся ранее переменная ships заменена свойством объекта модели)*/
+		{ locations: [0, 0, 0], hits: ["", "", ""] }, 
+		//Свойство ships содержит массив объектов ship,
+		//содержащих массивы locations и hits 
+       // для одного из трех кораблей.(Обратите внимание, 
+	   //что использовавшаяся ранее переменная ships 
+	   //заменена свойством объекта модели)
 		{ locations: [0, 0, 0], hits: ["", "", ""] },
 		{ locations: [0, 0, 0], hits: ["", "", ""] }
 	],
 
 
 	fire: function(guess) {   //pадаются координаты корабля 
-		for (var i = 0; i < this.numShips; i++) {   //перебираются координаты всех клеток всех кораблей
+		for (var i = 0; i < this.numShips; i++) {   
+			//перебираются координаты всех клеток всех кораблей
 			var ship = this.ships[i];  //проверка попадания в массив ships
 			var index = ship.locations.indexOf(guess);  
 			if (ship.hits[index] === "hit") {
@@ -122,11 +127,11 @@ var controller = {
 			this.guesses++;
 			var hit = model.fire(location);
 			if (hit && model.shipsSunk === model.numShips) {
-					view.displayMessage("You sank all my battleships, in " + this.guesses + " guesses");
+			view.displayMessage("You sank all my battleships, in " + this.guesses + " guesses");
 			}
 		}
 	}
-}
+};
 
 
 // helper function to parse a guess from the user
